@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Classrooms</title>
+
+<style>
+body{
+margin:0;
+font-family:Inter,system-ui;
+background:#f1f5f9;
+}
+
+.container{
+padding:40px;
+max-width:1100px;
+margin:auto;
+}
+
+h1{
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+/* FORM */
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+input,select{
+width:100%;
+padding:10px 14px;
+border-radius:10px;
+border:1px solid #e5e7eb;
+outline:none;
+font-size:14px;
+}
+
+label{
+font-size:13px;
+color:#64748b;
+}
+
+button{
+margin-top:15px;
+background:#c7d2fe;
+border:none;
+padding:12px 20px;
+border-radius:12px;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+opacity:.85;
+}
+
+/* ROOMS */
+
+.rooms{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+gap:20px;
+margin-top:20px;
+}
+
+.room{
+background:#ecfeff;
+padding:18px;
+border-radius:16px;
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.room h3{
+margin:0 0 8px;
+}
+
+.badge{
+display:inline-block;
+background:#ddd6fe;
+padding:4px 10px;
+border-radius:10px;
+font-size:12px;
+margin-top:8px;
+}
+
+.small{
+color:#64748b;
+font-size:13px;
+}
+
+.top-actions{
+margin-bottom:20px;
+}
+
+.back{
+text-decoration:none;
+background:#dcfce7;
+padding:10px 16px;
+border-radius:12px;
+font-weight:600;
+color:black;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="top-actions">
+<a class="back" href="/dashboard">← Dashboard</a>
+</div>
+
+<h1>🏫 Classrooms</h1>
+
+<!-- ADD FORM -->
+
+<div class="card">
+
+<h2>Add Classroom</h2>
+
+<form method="POST">
+
+<div class="form-grid">
+
+<div>
+<label>Room Name</label>
+<input name="room_name" required>
+</div>
+
+<div>
+<label>Block</label>
+<input name="block" required>
+</div>
+
+<div>
+<label>Room Type</label>
+<select name="room_type">
+<option>Lecture</option>
+<option>Hall</option>
+<option>Seminar</option>
+</select>
+</div>
+
+<div>
+<label>Capacity</label>
+<input name="capacity" type="number" required>
+</div>
+
+<div>
+<label>Floor</label>
+<input name="floor" type="number" required>
+</div>
+
+</div>
+
+<button>Add Classroom</button>
+
+</form>
+
+</div>
+
+<!-- EXISTING ROOMS -->
+
+<div class="card">
+
+<h2>Existing Classrooms</h2>
+
+<div class="rooms">
+
+{% for r in rooms %}
+
+<div class="room">
+<h3>{{ r.room_name }}</h3>
+
+<div class="small">
+Block: {{ r.block }}<br>
+Type: {{ r.room_type }}<br>
+Capacity: {{ r.capacity }}<br>
+Floor: {{ r.floor }}
+</div>
+
+<span class="badge">{{ r.room_type }}</span>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

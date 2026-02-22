@@ -1,0 +1,11 @@
+room_name,block,room_type,capacity,floor
+A101,Block A,Lecture,60,1
+A102,Block A,Lecture,50,1
+A201,Block A,Lab,40,2
+B101,Block B,Lecture,70,1
+B102,Block B,Seminar,30,1
+B201,Block B,Lab,35,2
+C101,Block C,Lecture,80,1
+C102,Block C,Seminar,40,1
+C201,Block C,Lab,45,2
+Auditorium,Main,Hall,200,0

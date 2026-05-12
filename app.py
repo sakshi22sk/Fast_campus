@@ -4,10 +4,11 @@ from flask_apscheduler import APScheduler
 from datetime import datetime
 import csv
 from flask_socketio import SocketIO
-
+import os
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:3969@localhost:5432/smartcampus"
+
+app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)

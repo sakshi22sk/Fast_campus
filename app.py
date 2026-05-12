@@ -42,7 +42,7 @@ def register():
 
         return redirect(url_for("register"))
 
-    return render_template("register.html")
+    return redirect("/dashboard")
 # ---------------- IMPORT ROOMS ----------------
 
 @app.route("/import_rooms")

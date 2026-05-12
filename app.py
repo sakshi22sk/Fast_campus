@@ -5,6 +5,7 @@ from datetime import datetime
 import csv
 from flask_socketio import SocketIO
 import os
+
 app = Flask(__name__)
 
 
@@ -30,6 +31,18 @@ def login():
         return redirect("/dashboard")
     return render_template("login.html")
 
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        name = request.form.get("name")
+        email = request.form.get("email")
+        password = request.form.get("password")
+
+        flash("Registration Successful!", "success")
+
+        return redirect(url_for("register"))
+
+    return render_template("register.html")
 # ---------------- IMPORT ROOMS ----------------
 
 @app.route("/import_rooms")

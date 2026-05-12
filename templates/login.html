@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:Inter}
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(120deg,#3b2b7a,#9b4d96);
+overflow:hidden;
+}
+
+/* background illustration */
+.bg{
+position:absolute;
+inset:0;
+background:url("https://images.unsplash.com/photo-1519681393784-d120267933ba") center/cover;
+filter:blur(2px) brightness(.6);
+z-index:-1;
+}
+
+.card{
+width:380px;
+padding:40px;
+border-radius:20px;
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(20px);
+box-shadow:0 20px 60px rgba(0,0,0,.4);
+color:white;
+text-align:center;
+}
+
+h2{margin-bottom:30px}
+
+.input{
+width:100%;
+background:none;
+border:none;
+border-bottom:2px solid rgba(255,255,255,.5);
+padding:12px;
+margin-bottom:25px;
+color:white;
+outline:none;
+font-size:15px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+font-size:13px;
+opacity:.9;
+margin-bottom:25px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+font-weight:700;
+cursor:pointer;
+background:white;
+color:#444;
+}
+
+.small{
+margin-top:20px;
+font-size:13px;
+opacity:.85;
+}
+
+a{color:white;text-decoration:none;font-weight:600}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<form class="card" method="POST">
+
+<h2>Login</h2>
+
+<input class="input" placeholder="Email" name="email">
+
+<input type="password" class="input" placeholder="Password" name="password">
+
+<div class="row">
+<label><input type="checkbox"> Remember me</label>
+<a href="#">Forgot Password</a>
+</div>
+
+<button>Log in</button>
+
+<div class="small">
+Don't have an account? <a href="#">Register</a>
+</div>
+
+</form>
+
+</body>
+</html>

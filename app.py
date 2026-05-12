@@ -40,9 +40,9 @@ def register():
 
         flash("Registration Successful!", "success")
 
-        return redirect(url_for("register"))
+        return redirect(url_for("/dashboard"))
 
-    return redirect("/dashboard")
+    return redirect("register")
 # ---------------- IMPORT ROOMS ----------------
 
 @app.route("/import_rooms")

@@ -33,16 +33,18 @@ def login():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+
     if request.method == "POST":
+
         name = request.form.get("name")
         email = request.form.get("email")
         password = request.form.get("password")
 
         flash("Registration Successful!", "success")
 
-        return redirect(url_for("/dashboard"))
+        return redirect("/dashboard")
 
-    return redirect("register")
+    return render_template("register.html")
 # ---------------- IMPORT ROOMS ----------------
 
 @app.route("/import_rooms")
